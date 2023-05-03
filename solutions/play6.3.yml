@@ -1,0 +1,14 @@
+---
+- name: Playbook 6.3
+  hosts: ubuntu
+  become: true
+  tasks:
+    - name: Install software på Ubuntu
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - ncal
+        - wget
+        - tree
+        - net-tools

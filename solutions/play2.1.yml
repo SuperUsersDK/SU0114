@@ -1,0 +1,8 @@
+---
+- name: Playbook 2.1
+  hosts: linux
+  become: true
+  tasks:
+    - name: Set timezone
+      ansible.builtin.timezone:
+        name: Europe/Copenhagen

@@ -1,0 +1,16 @@
+---
+- name: Playbook 6.7
+  hosts: Linux
+  tasks:
+    - name: Create users on Linux
+      become: yes
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        password: "{{ item.passwd }}"
+        state: present
+      loop:
+        - { name: 'erin', passwd: '$6$zMSqRFIv.80Z9cIx$2NNKrE612DpPd5fKSURcFf5xtr66/fc5HSHn80coiVc/mRZQVgQxRoeiI3v0QS102LI65purBedVCi0r/HSdh1' }
+        - { name: 'frank', passwd: '$6$xxn.lXlRE/eueNXK$ZA5bxhQjtME1hruvbWgEy/j463UJnSYLdwt/NGErW6jCcSBIS.rzafRdO4TaN78AmKcbWX9Mal9bXDURTlhu4.' }
+
+
+

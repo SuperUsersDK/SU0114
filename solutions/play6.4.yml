@@ -1,0 +1,13 @@
+---
+- name: Playbook 6.4
+  hosts: linux
+  become: true
+  tasks:
+    - name: Create users
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - alice
+        - bob
+        - charlie

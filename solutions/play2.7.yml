@@ -1,0 +1,10 @@
+---
+- name: Playbook 2.7
+  hosts: web1
+  become: true
+  tasks:
+    - name: Install tmux
+      ansible.builtin.apt:
+        name: tmux
+        state: present
+        update_cache: true

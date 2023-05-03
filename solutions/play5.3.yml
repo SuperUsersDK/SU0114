@@ -1,0 +1,9 @@
+---
+- name: Playbook 5.3
+  hosts: linux
+  become: true
+  tasks:
+    - name: Delete ansible-hosts.txt
+      ansible.builtin.file:
+        state: absent
+        path: /home/super/ansible-hosts.txt

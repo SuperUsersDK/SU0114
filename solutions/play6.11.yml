@@ -1,0 +1,7 @@
+---
+- name: Playbook 6.11
+  hosts: localhost
+  tasks:
+    - name: jinja2 random
+      ansible.builtin.debug:
+        msg: "{{ 100 | random }}"

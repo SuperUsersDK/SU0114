@@ -1,0 +1,7 @@
+---
+- name: Playbook 6.1
+  hosts: all
+  tasks:
+    - name: Display artifacts
+      ansible.builtin.debug:
+        var: ansible_facts

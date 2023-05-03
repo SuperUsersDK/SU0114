@@ -1,0 +1,8 @@
+---
+- name: Playbook 5.4
+  hosts: windows
+  tasks:
+    - name: Copy /etc/ansible/hosts to windows
+      ansible.windows.win_copy:
+        src: /etc/ansible/hosts
+        dest: c:/ansible-hosts.txt

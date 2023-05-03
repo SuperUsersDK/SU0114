@@ -1,0 +1,9 @@
+---
+- name: Playbook 5.2
+  hosts: linux
+  become: true
+  tasks:
+    - name: Copy /etc/ansible/hosts to linux
+      ansible.builtin.copy:
+        src: /etc/ansible/hosts
+        dest: /home/super/ansible-hosts.txt

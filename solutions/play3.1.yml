@@ -1,0 +1,12 @@
+---
+- name: Playbook 3.1
+  hosts: web1
+  become: true
+  vars:
+    package: apache2
+  tasks:
+    - name: Install apache2
+      ansible.builtin.apt:
+        name: "{{ package }}"
+        state: present
+        update_cache: true

@@ -1,0 +1,25 @@
+---
+- name: Playbook 6.6
+  hosts: all
+  tasks:
+    - name: Create users on Linux
+      become: yes
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - alice
+        - bob
+        - charlie
+      when:
+        ansible_system == "Linux"
+    - name: Create users on Windows
+      ansible.windows.win_user:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - alice
+        - bob
+        - charlie
+      when:
+        ansible_system == "Win32NT"

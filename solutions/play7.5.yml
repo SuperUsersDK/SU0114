@@ -1,0 +1,6 @@
+---
+- name: Playbook 7.5
+  hosts: ubuntu
+  roles:
+    - superapache
+    - supernginx

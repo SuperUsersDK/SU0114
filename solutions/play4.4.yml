@@ -1,0 +1,14 @@
+---
+- name: Playbook 4.4
+  hosts: data
+  become: true
+  tasks:
+    - register: result
+      ansible.builtin.stat:
+        path: /mysql_update
+
+    - name: Update mysql
+      when: result.stat.exists
+      ansible.builtin.dnf:
+        name: mysql
+        state: latest

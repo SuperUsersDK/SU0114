@@ -1,0 +1,12 @@
+---
+- name: Playbook 4.1
+  hosts: web1
+  become: true
+  vars:
+    require: "no"
+  tasks:
+    - name: Service up
+      when: require == "yes"
+      ansible.builtin.service:
+        name: apache2
+        state: restarted
