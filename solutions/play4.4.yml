@@ -3,12 +3,13 @@
   hosts: data
   become: true
   tasks:
-    - register: result
+    - name: Check if the file exists
       ansible.builtin.stat:
         path: /mysql_update
-
+      register: result
+      
     - name: Update mysql
-      when: result.stat.exists
       ansible.builtin.dnf:
         name: mysql
         state: latest
+      when: result.stat.exists
