@@ -1,6 +1,6 @@
 ---
 - name: Playbook 6.7
-  hosts: Linux
+  hosts: linux
   tasks:
     - name: Create users on Linux
       become: yes
